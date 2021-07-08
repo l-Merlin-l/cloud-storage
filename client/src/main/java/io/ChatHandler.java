@@ -25,12 +25,13 @@ public class ChatHandler implements Runnable {
             int read;
             while (true) {
                 read= inputStream.read(buffer);
+
                 fileOutputStream.write(buffer,0,read);
                 fileOutputStream.flush();
             }
 
         } catch (Exception e) {
-            e.printStackTrace();
+
         } finally {
             try {
                 inputStream.close();

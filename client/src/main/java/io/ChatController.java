@@ -18,7 +18,6 @@ import java.util.ResourceBundle;
 public class ChatController implements Initializable {
 
     private InputStream is;
-//    private OutputStream outputStream;
     private FileInputStream fileIS;
     private DataOutputStream dataOS;
 
@@ -38,8 +37,6 @@ public class ChatController implements Initializable {
             try {
                 fileIS =new FileInputStream(file);
                 int read;
-            dataOS.writeUTF(file.getName());
-            dataOS.writeLong(Files.size(Paths.get(msg)));
                 while ((read = fileIS.read(buffer)) != -1) {
                     dataOS.write(buffer, 0 ,read);
                 }
@@ -70,7 +67,7 @@ public class ChatController implements Initializable {
                             listView.getItems().add(new String(buffer, 0, read));
                         });
                     }
-                } catch (Exception e) {
+                } catch (IOException e) {
                     System.out.println("Exception whole read");
                 }
             });
