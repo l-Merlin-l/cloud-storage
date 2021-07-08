@@ -9,7 +9,7 @@
             fx:controller="io.ChatController">
 
     <ListView fx:id="listView" layoutX="15.0" layoutY="15.0" prefHeight="557.0" prefWidth="415.0"/>
-    <TextField fx:id="statusBar" editable="false" layoutX="15.0" layoutY="571.0" prefHeight="36.0"
+    <TextField fx:id="textField"  layoutX="15.0" layoutY="571.0" prefHeight="36.0" onAction="#send"
                prefWidth="292.0"/>
     <Button layoutX="307.0" layoutY="571.0" onAction="#send" mnemonicParsing="false" prefHeight="36.0" prefWidth="123.0"
             text="SEND FILE"/>
